@@ -21,7 +21,7 @@ export class EsriMapComponent implements OnInit {
     const esriLoaderOptions = {
       // use a specific version of the API instead of the latest
       url: '//js.arcgis.com/3.18/'
-    }
+    };
     if (this.esriLoader.isLoaded()) {
       this._createMap();
     } else {

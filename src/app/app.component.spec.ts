@@ -2,12 +2,14 @@
 
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { EsriMapComponent } from './esri-map/esri-map.component';
 
 describe('App: AngularCliEsri', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        EsriMapComponent
       ],
     });
   });
