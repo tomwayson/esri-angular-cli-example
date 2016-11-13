@@ -14,7 +14,7 @@ export class EsriLoaderService {
 
   bootstrap(callback, options) {
     // Default options object to empty hash
-    var opts = options || {};
+    const opts = options || {};
 
     // Don't reload API if it is already loaded
     if (this.isLoaded()) {
@@ -23,7 +23,7 @@ export class EsriLoaderService {
     }
 
     // Create Script Object to be loaded
-    var script    = document.createElement('script');
+    const script    = document.createElement('script');
     script.type   = 'text/javascript';
     script.src    = opts.url || window.location.protocol + '//js.arcgis.com/4.1';
 
