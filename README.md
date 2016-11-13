@@ -1,6 +1,20 @@
-# AngularCliEsri
+# angular-cli-esri
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
+[View it live](https://tomwayson.github.io/angular-cli-esri/)
+
+## About
+
+This project demonstrates how to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
+
+The key is to **not** try to `import` esri modules directly from the modules in your application. 
+Instead you *must* load the ArcGIS API for JavaScript via a script tag and use the Dojo loader that comes bundled with it to require and use those modules.
+
+The simplest way to do that would be to just manually include a `<script src="https://js.arcgis.com/4.1/"></script>` in index.html and within your code call `window.require()` to load the modules you need. 
+
+However, this project includes a [service](src/app/esri-loader.service.ts) that can lazy load the ArcGIS API for JavaScript 
+and then require the modules needed to create and work with a map. The code showing how to use that service can be found in [esri-map.component.ts](src/app/esri-map/esri-map.component.ts).
+
+Note that you also need to [load the CSS for the ArcGIS API for JavaScript](src/index.html#L11). 
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
