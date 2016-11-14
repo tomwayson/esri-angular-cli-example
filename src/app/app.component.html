@@ -1,4 +1,16 @@
-<h1>
-  {{title}}
-</h1>
-<app-esri-map></app-esri-map>
+<md-toolbar color="primary">
+  <span>Angular CLI Esri</span>
+
+  <!-- navigation menu should be on the far right of the toolbar -->
+  <span class="fill-space"></span>
+  <button md-icon-button [md-menu-trigger-for]="menu">
+   <md-icon>more_vert</md-icon>
+  </button>
+
+  <md-menu #menu="mdMenu" x-position="before">
+    <button md-menu-item routerLink="/home"> Home </button>
+    <button md-menu-item routerLink="/map"> Map </button>
+  </md-menu>
+</md-toolbar>
+
+<router-outlet></router-outlet>

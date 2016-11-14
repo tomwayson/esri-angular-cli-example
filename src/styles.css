@@ -8,3 +8,7 @@ html, body {
   margin: 0px;
   padding: 0px;
 }
+
+.fill-space {
+  flex: 1 1 auto;
+}
