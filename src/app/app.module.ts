@@ -8,12 +8,14 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { EsriMapComponent } from './esri-map/esri-map.component';
 import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EsriMapComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
