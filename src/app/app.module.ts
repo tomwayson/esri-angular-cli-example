@@ -10,6 +10,8 @@ import { EsriMapComponent } from './esri-map/esri-map.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
+import { EsriLoaderService } from './esri-loader.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,7 @@ import { HeaderComponent } from './header/header.component';
       { path: '**', redirectTo: '/home' }
     ])
   ],
-  providers: [],
+  providers: [EsriLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
