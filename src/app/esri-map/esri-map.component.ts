@@ -1,8 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { EsriLoaderService } from '../esri-loader.service';
 
-let _map;
-
 @Component({
   selector: 'app-esri-map',
   templateUrl: './esri-map.component.html',
@@ -10,11 +8,12 @@ let _map;
   providers: [EsriLoaderService]
 })
 export class EsriMapComponent implements OnInit {
+  map: any;
 
   constructor(private elRef: ElementRef, private esriLoader: EsriLoaderService) {}
 
   ngOnInit() {
-    if (_map) {
+    if (this.map) {
       // map is already initialized
       return;
     }
@@ -40,10 +39,10 @@ export class EsriMapComponent implements OnInit {
   // create a map at the root dom node of this component
   _createMap() {
     this.esriLoader.require(['esri/map'], (Map) => {
-      _map = new Map(this.elRef.nativeElement.firstChild, {
+      this.map = new Map(this.elRef.nativeElement.firstChild, {
         center: [-118, 34.5],
         zoom: 8,
-        basemap: 'topo'
+        basemap: 'dark-gray'
       });
     });
   }

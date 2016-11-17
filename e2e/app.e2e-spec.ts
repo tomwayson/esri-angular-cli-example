@@ -7,8 +7,8 @@ describe('angular-cli-esri App', function() {
     page = new AngularCliEsriPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display the title', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getTitleText()).toEqual('Angular CLI Esri');
   });
 });

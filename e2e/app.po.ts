@@ -2,10 +2,10 @@ import { browser, element, by } from 'protractor';
 
 export class AngularCliEsriPage {
   navigateTo() {
-    return browser.get('/');
+    return browser.get('/home');
   }
 
-  getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+  getTitleText() {
+    return element(by.id('title')).getText();
   }
 }
