@@ -1,9 +1,8 @@
 <div class="container">
-  <p>This is a demonstration of using the <a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a>    in an application generated with the <a href="https://github.com/angular/angular-cli" target="_blank">Angular CLI</a>.
-    The source code for this project can be found <a href="https://github.com/tomwayson/angular-cli-esri" target="_blank">here</a>.</p>
-  <p>Below is a list of the examples that are covered here along with links to see them in action:</p>
-
-  <md-list>
-    <md-list-item><a routerLink="/map" routerLinkActive="active">Lazy Loaded Map</a></md-list-item>
-  </md-list>
+  <p>This is an example of how to use the <a href="https://developers.arcgis.com/javascript/" target="_blank">ArcGIS API for JavaScript</a>
+    in an application generated with the <a href="https://github.com/angular/angular-cli" target="_blank">Angular CLI</a>.</p>
+  <p>One of the key benefits of the approach demonstrated in this application is that you can lazy load the map.
+    Notice how fast this page loaded? That's because we haven't loaded the map yet. Click the button below to load and view the map.</p>
+  <button md-raised-button routerLink="/map" routerLinkActive="active" color="primary" class="home-button-view-map">View Map</button>
+  <p>The source code for this project can be found <a href="https://github.com/tomwayson/angular-cli-esri" target="_blank">here</a>.</p>
 </div>

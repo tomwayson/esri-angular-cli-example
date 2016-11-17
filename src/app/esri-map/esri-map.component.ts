@@ -42,7 +42,7 @@ export class EsriMapComponent implements OnInit {
       this.map = new Map(this.elRef.nativeElement.firstChild, {
         center: [-118, 34.5],
         zoom: 8,
-        basemap: 'topo'
+        basemap: 'dark-gray'
       });
     });
   }
