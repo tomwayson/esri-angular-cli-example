@@ -25,20 +25,21 @@ export class EsriMapComponent implements OnInit {
       this._createMap();
     } else {
       // must load ArcGIS API for JavaScript on the page before creating the map
-      this.esriLoader.init((err, require) => {
-        if (err) {
-          console.error(err);
-          return;
-        }
+      this.esriLoader.load(esriLoaderOptions)
+      .then(() => {
         this._createMap();
-      }, esriLoaderOptions);
+      })
+      .catch(err => {
+        console.error(err);
+      });
     }
   }
 
   // load the map module and then
   // create a map at the root dom node of this component
   _createMap() {
-    this.esriLoader.require(['esri/map'], (Map) => {
+    this.esriLoader.loadModules(['esri/map'])
+    .then((Map) => {
       this.map = new Map(this.elRef.nativeElement.firstChild, {
         center: [-118, 34.5],
         zoom: 8,

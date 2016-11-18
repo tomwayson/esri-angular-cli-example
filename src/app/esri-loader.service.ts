@@ -12,12 +12,21 @@ export class EsriLoaderService {
     return isLoaded();
   }
 
-  // TODO: return a promise instead of taking callback
-  init(callback: Function, options?: Object) {
-    return bootstrap(callback, options);
+  // wrap bootstrap in a promise
+  load(options?: Object): Promise<Function> {
+    return new Promise((resolve) => {
+      bootstrap(resolve, options);
+    });
   }
 
-  // TODO: return a promise instead of taking callback
+  // wrap Dojo require in a promise
+  loadModules(modules: string[]): Promise<any> {
+    return new Promise((resolve) => {
+      dojoRequire(modules, resolve);
+    });
+  }
+
+  // convenience function to allow calling Dojo require w/ callback
   require(modules: string[], callback: Function) {
     return dojoRequire(modules, callback);
   }
