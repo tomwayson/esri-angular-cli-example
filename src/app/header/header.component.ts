@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { MdMenuTrigger} from '@angular/material'
+import { MdMenuTrigger} from '@angular/material';
 
 @Component({
   selector: 'app-header',
