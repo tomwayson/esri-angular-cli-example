@@ -14,6 +14,14 @@ export class EsriLoaderService {
 
   // wrap bootstrap in a promise
   load(options?: Object): Promise<Function> {
+    // default options if options not provided
+    if (options === undefined) {
+      options = {
+        // use a specific version of the API instead of the latest
+        url: '//js.arcgis.com/3.18/'
+      };
+    }
+    
     return new Promise((resolve) => {
       bootstrap(resolve, options);
     });

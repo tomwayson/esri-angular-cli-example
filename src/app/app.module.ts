@@ -11,9 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
 import { EsriLoaderService } from './esri-loader.service';
-import { EsriMapService } from './esri-map/esri-map.service';
 import { EsriMapResolveService } from './esri-map/esri-map-resolve.service';
-
 
 @NgModule({
   declarations: [
@@ -35,7 +33,7 @@ import { EsriMapResolveService } from './esri-map/esri-map-resolve.service';
       { path: '**', redirectTo: '/home' }
     ])
   ],
-  providers: [EsriLoaderService, EsriMapService, EsriMapResolveService],
+  providers: [EsriLoaderService, EsriMapResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4,6 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EsriMapComponent } from './esri-map.component';
+import { EsriLoaderService } from '../esri-loader.service';
 
 describe('EsriMapComponent', () => {
   let component: EsriMapComponent;
@@ -11,7 +12,8 @@ describe('EsriMapComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ EsriMapComponent ]
+      declarations: [ EsriMapComponent ],
+      providers: [EsriLoaderService]
     })
     .compileComponents();
   }));
