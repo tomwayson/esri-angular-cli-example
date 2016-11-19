@@ -10,6 +10,22 @@ export class EsriMapService {
 
   constructor(private esriLoader: EsriLoaderService) { }
 
+  bootstrapEsri() {
+    const esriLoaderOptions = {
+      // use a specific version of the API instead of the latest
+      url: '//js.arcgis.com/3.18/'
+    };
+    if (!this.esriLoader.isLoaded()) {
+      // must load ArcGIS API for JavaScript on the page before creating the map
+      this.esriLoader.init((err, require) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      }, esriLoaderOptions);
+    }
+  }
+
   public loadMap(mapEl: ElementRef): Observable<any> {
     const esriLoaderOptions = {
       // use a specific version of the API instead of the latest
