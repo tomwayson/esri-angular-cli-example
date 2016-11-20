@@ -12,30 +12,35 @@ export class EsriLoaderService {
     return isLoaded();
   }
 
-  // wrap bootstrap in a promise
+  // lazy load the ArcGIS API for JavaScript
   load(options?: Object): Promise<Function> {
-    // default options if options not provided
-    if (options === undefined) {
-      options = {
-        // use a specific version of the API instead of the latest
-        url: '//js.arcgis.com/3.18/'
-      };
-    }
-    
-    return new Promise((resolve) => {
-      bootstrap(resolve, options);
+    return new Promise((resolve, reject) => {
+      // don't try to load a second time
+      if (isLoaded()) {
+        resolve(dojoRequire);
+      }
+      // wrap bootstrap in a promise
+      bootstrap((err) => {
+        if (err) {
+          reject(err);
+        } else {
+          resolve(dojoRequire);
+        }
+      }, options);
     });
   }
 
   // wrap Dojo require in a promise
-  loadModules(modules: string[]): Promise<any> {
+  loadModules(moduleNames: string[]): Promise<any[]> {
     return new Promise((resolve) => {
-      dojoRequire(modules, resolve);
+      dojoRequire(moduleNames, (...modules) => {
+        resolve(modules);
+      });
     });
   }
 
   // convenience function to allow calling Dojo require w/ callback
-  require(modules: string[], callback: Function) {
-    return dojoRequire(modules, callback);
+  require(moduleNames: string[], callback: Function) {
+    return dojoRequire(moduleNames, callback);
   }
 }

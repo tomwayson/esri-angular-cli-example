@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { EsriLoaderService } from '../esri-loader.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-esri-map',
@@ -11,37 +11,24 @@ export class EsriMapComponent implements OnInit {
 
   map: any;
 
-  constructor(private esriLoader: EsriLoaderService) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     if (this.map) {
       // map is already initialized
       return;
     }
-    if (this.esriLoader.isLoaded()) {
-      this._createMap();
-    } else {
-      // must load ArcGIS API for JavaScript on the page before creating the map
-      this.esriLoader.load()
-        .then(() => {
-          this._createMap();
-        })
-        .catch(err => {
-          console.error(err);
-        });
-    }
+    // get the required esri classes from the route
+    const esriModules = this.route.snapshot.data['esriModules'];
+    this._createMap(esriModules);
   }
 
-  // load the map module and then
   // create a map at the root dom node of this component
-  _createMap() {
-    this.esriLoader.loadModules(['esri/map'])
-      .then((Map) => {
-        this.map = new Map(this.mapEl.nativeElement, {
-          center: [-118, 34.5],
-          zoom: 8,
-          basemap: 'dark-gray'
-        });
-      });
+  _createMap([Map]) {
+    this.map = new Map(this.mapEl.nativeElement, {
+      center: [-118, 34.5],
+      zoom: 8,
+      basemap: 'dark-gray'
+    });
   }
 }

@@ -26,10 +26,10 @@ import { EsriMapResolveService } from './esri-map/esri-map-resolve.service';
     HttpModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent, resolve: {
-        esri: EsriMapResolveService
+      { path: 'home', component: HomeComponent },
+      { path: 'map', component: EsriMapComponent, resolve: {
+        esriModules: EsriMapResolveService
       } },
-      { path: 'map', component: EsriMapComponent },
       { path: '**', redirectTo: '/home' }
     ])
   ],

@@ -4,16 +4,28 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EsriMapComponent } from './esri-map.component';
-import { EsriLoaderService } from '../esri-loader.service';
+import { ActivatedRoute, Data } from '@angular/router';
 
 describe('EsriMapComponent', () => {
   let component: EsriMapComponent;
   let fixture: ComponentFixture<EsriMapComponent>;
+  let MockMapClass;
 
   beforeEach(async(() => {
+    // provide a mock map class to the component via a mock route
+    MockMapClass = jasmine.createSpy('Map');
     TestBed.configureTestingModule({
       declarations: [ EsriMapComponent ],
-      providers: [EsriLoaderService]
+      providers: [{
+        provide: ActivatedRoute,
+        useValue: {
+          snapshot: {
+            data: {
+              esriModules: [MockMapClass]
+            }
+          }
+        }
+      }]
     })
     .compileComponents();
   }));
@@ -25,6 +37,11 @@ describe('EsriMapComponent', () => {
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    // verify that the map was initialized with expected options
+    expect(MockMapClass.calls.mostRecent().args[1]).toEqual({
+      center: [-118, 34.5],
+      zoom: 8,
+      basemap: 'dark-gray'
+    });
   });
 });
