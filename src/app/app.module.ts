@@ -10,6 +10,9 @@ import { EsriMapComponent } from './esri-map/esri-map.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
+import { EsriLoaderService } from './esri-loader.service';
+import { EsriMapResolveService } from './esri-map/esri-map-resolve.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +27,13 @@ import { HeaderComponent } from './header/header.component';
     MaterialModule.forRoot(),
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: 'map', component: EsriMapComponent },
+      { path: 'map', component: EsriMapComponent, resolve: {
+        esriModules: EsriMapResolveService
+      } },
       { path: '**', redirectTo: '/home' }
     ])
   ],
-  providers: [],
+  providers: [EsriLoaderService, EsriMapResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
