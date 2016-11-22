@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 
-import { EsriLoaderService } from './../esri-loader.service';
+import { EsriLoaderService } from 'angular2-esri-loader';
 
 @Injectable()
 export class EsriMapResolveService implements Resolve<any> {
