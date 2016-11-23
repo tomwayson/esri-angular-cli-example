@@ -1,6 +1,6 @@
 # angular-cli-esri
 
-[View it live](https://tomwayson.github.io/angular-cli-esri/)
+[View it live](https://tomwayson.github.io/esri-angular-cli-example/)
 
 ## About
 
