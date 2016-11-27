@@ -1,4 +1,4 @@
-# angular-cli-esri
+# esri-angular-cli-example
 
 [View it live](https://tomwayson.github.io/esri-angular-cli-example/)
 
