@@ -1,5 +1,5 @@
 {
-  "name": "angular-cli-esri",
+  "name": "esri-angular-cli-example",
   "version": "0.1.1",
   "license": "MIT",
   "angular-cli": {},
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~2.1.0",
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
+    "angular2-esri-loader": "^0.1.10",
     "core-js": "^2.4.1",
     "esri-loader": "^0.1.2",
     "rxjs": "5.0.0-beta.12",
