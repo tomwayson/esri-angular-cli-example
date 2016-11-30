@@ -1,6 +1,6 @@
 import { AngularCliEsriPage } from './app.po';
 
-describe('angular-cli-esri App', function() {
+describe('esri-angular-cli-example App', function() {
   let page: AngularCliEsriPage;
 
   beforeEach(() => {
