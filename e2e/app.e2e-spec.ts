@@ -9,6 +9,6 @@ describe('esri-angular-cli-example App', function() {
 
   it('should display the title', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Angular CLI Esri');
+    expect(page.getTitleText()).toEqual('Esri Angular CLI Example');
   });
 });
