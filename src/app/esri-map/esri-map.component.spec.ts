@@ -4,7 +4,7 @@ import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
 import { EsriMapComponent } from './esri-map.component';
-import { ActivatedRoute, Data } from '@angular/router';
+import { EsriMapModule } from './esri-map.module';
 
 describe('EsriMapComponent', () => {
   let component: EsriMapComponent;
@@ -16,23 +16,17 @@ describe('EsriMapComponent', () => {
     MockMapClass = jasmine.createSpy('Map');
     TestBed.configureTestingModule({
       declarations: [ EsriMapComponent ],
-      providers: [{
-        provide: ActivatedRoute,
-        useValue: {
-          snapshot: {
-            data: {
-              esriModules: [MockMapClass]
-            }
-          }
-        }
-      }]
+      imports: [EsriMapModule]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
+    console.log('before before')
     fixture = TestBed.createComponent(EsriMapComponent);
+    console.log('before')
     component = fixture.componentInstance;
+    console.log('after')
     fixture.detectChanges();
   });
 

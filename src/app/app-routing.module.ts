@@ -1,25 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { EsriMapComponent } from './esri-map/esri-map.component';
 import { HomeComponent } from './home/home.component';
 
-// import { EsriMapResolveService } from './esri-map/esri-map-resolve.service';
-
-const appRoutes: Routes = [
+const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
-  {
-    path: 'map', component: EsriMapComponent
-    // , resolve: {
-    //   esriModules: EsriMapResolveService
-    // }
-  },
+  { path: 'map', loadChildren: './esri-map/esri-map.module#EsriMapModule' },
   { path: '**', redirectTo: '/home' }
 ]
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(APP_ROUTES)
   ],
   exports: [
     RouterModule
