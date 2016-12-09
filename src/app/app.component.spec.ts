@@ -5,7 +5,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { EsriMapComponent } from './esri-map/esri-map.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 
@@ -17,7 +16,6 @@ describe('App: AngularCliEsri', () => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        EsriMapComponent,
         HomeComponent,
         HeaderComponent
       ],

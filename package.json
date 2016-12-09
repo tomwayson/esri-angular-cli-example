@@ -8,7 +8,9 @@
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "typings": "cd src && typings install",
+    "postinstall": "npm run typings"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +24,7 @@
     "@angular/platform-browser-dynamic": "~2.1.0",
     "@angular/router": "~3.1.0",
     "angular2-esri-loader": "^0.1.11",
+    "angular2-esri4-components": "^0.1.0",
     "core-js": "^2.4.1",
     "esri-loader": "^0.1.2",
     "rxjs": "5.0.0-beta.12",
@@ -44,6 +47,7 @@
     "ts-node": "1.2.1",
     "tslint": "3.13.0",
     "typescript": "~2.0.3",
+    "typings": "^2.0.0",
     "webdriver-manager": "10.2.5"
   }
 }
