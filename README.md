@@ -2,9 +2,9 @@
 
 [View it live](https://tomwayson.github.io/esri-angular-cli-example/)
 
-## About
+## Goal
 
-This project demonstrates how to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.19-3.
+The goal of this repository is to demonstrate how to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli).
 
 Unfortunately, you can't simply `npm install` the ArcGIS API and then `import` esri modules directly from the modules in your application. To understand why, see [Using the ArcGIS API for JavaScript in Applications built with webpack](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/).
 
