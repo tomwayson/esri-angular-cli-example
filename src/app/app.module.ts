@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
+// hammerjs is a required import for some of the features in Angular Material
+import 'hammerjs';
+
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
