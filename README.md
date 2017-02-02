@@ -8,11 +8,14 @@ The goal of this repository is to demonstrate how to use the [ArcGIS API for Jav
 
 Unfortunately, you can't simply `npm install` the ArcGIS API and then `import` esri modules directly from the modules in your application. To understand why, see [Using the ArcGIS API for JavaScript in Applications built with webpack](http://tomwayson.com/2016/11/27/using-the-arcgis-api-for-javascript-in-applications-built-with-webpack/).
 
+## How it works
+
 Instead this application uses the [angular2-esri4-components](https://github.com/kgs916/angular2-esri4-components) component library, which in turn uses the service exposed by the [angular2-esri-loader](https://github.com/tomwayson/angular2-esri-loader) library to lazy load the ArcGIS API for JavaScript and then require the modules needed to create and work with a map.
 
-Note that you also need to [load the CSS for the ArcGIS API for JavaScript](src/index.html#L14). 
+Note that you also need to [import the CSS for the ArcGIS API for JavaScript](src/styles.css#L8) in `styles.css`. You can also import other global, remote CSS files in this way, rather than maintaining these in `index.html`.
 
 ## Development server
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Code scaffolding

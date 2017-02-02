@@ -2,6 +2,11 @@
 
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
 
+@import '//fonts.googleapis.com/icon?family=Material+Icons';
+
+/* Required CSS for the ArcGIS API for JavaScript */
+@import '//js.arcgis.com/4.2/esri/css/main.css';
+
 html, body {
   height: 100%;
   width: 100%;
