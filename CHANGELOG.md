@@ -2,6 +2,16 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.4.1
+
+### Changed
+- upgrade angular, angular cli (to v1), and angular material
+
+## 0.4.0
+
+### Added
+- more compelling map
+
 ## 0.3.2
 ### Changed
 - remove local dependency on @types/arcgis-js-api
