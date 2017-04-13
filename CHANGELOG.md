@@ -2,6 +2,14 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## 0.3.2
+### Changed
+- remove local dependency on @types/arcgis-js-api
+
+## 0.3.1
+### Changed
+- moved css imports to styles.css and out of index.html
+
 ## 0.3.0
 ### Added
 - use angular2-esri4-components library for generating the ESRI map

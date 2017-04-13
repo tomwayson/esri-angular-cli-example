@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./esri-map.component.css']
 })
 export class EsriMapComponent implements OnInit {
-  mapProperties: __esri.MapProperties = {
-    basemap: 'dark-gray'
+  webMapProperties: __esri.WebMapProperties = {
+    portalItem: {
+      id: 'ad5759bf407c4554b748356ebe1886e5'
+    }
   };
   mapViewProperties: __esri.MapViewProperties = {
-    center: [-118, 34.5],
-    zoom: 8,
+    zoom: 16
   };
   map: __esri.Map;
   mapView: __esri.MapView;
