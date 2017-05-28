@@ -2,11 +2,10 @@
 
 import { TestBed, async, ComponentFixture } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { HeaderComponent } from './header/header.component';
 
 describe('App: AngularCliEsri', () => {
   let component: AppComponent;
@@ -15,16 +14,17 @@ describe('App: AngularCliEsri', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent,
-        HomeComponent,
-        HeaderComponent
+        AppComponent
       ],
       imports: [
-        MaterialModule.forRoot(),
         RouterTestingModule.withRoutes([
           { path: 'fakeRoute', redirectTo: '/fakeRoute' }
         ])
-      ]
+      ],
+      providers: [
+        MaterialModule
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
     });
   });
 
