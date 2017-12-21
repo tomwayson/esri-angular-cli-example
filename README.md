@@ -6,15 +6,15 @@
 
 This repository is an example of one way to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli).
 
-The application uses the [angular-esri-components](https://github.com/TheKeithStewart/angular-esri-components) component library, which in turn uses the service exposed by the [angular2-esri-loader](https://github.com/tomwayson/angular2-esri-loader) library to lazy load the ArcGIS API for JavaScript and then require the modules needed to create and work with a map.
+The application uses the [angular-esri-components](https://github.com/TheKeithStewart/angular-esri-components) component library to lazy load the ArcGIS API for JavaScript and then require the modules needed to create and work with a map.
  
 ## Adding the ArcGIS API to your own angular-cli application
 
-Rather than clone this repository, you should create your own application with the [angular-cli](https://github.com/angular/angular-cli) and then follow the instructions below to add the above libraries:
- - [angular2-esri-loader](https://github.com/tomwayson/angular2-esri-loader/blob/master/README.md#in-an-angular-cli-application) - a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in your Angular applications
- - [angular-esri-components](https://github.com/TheKeithStewart/angular-esri-components#setup) - a set of reusable components for use with v4.x (only) of the ArcGIS API
-
 You should **not** use this repository as a starting point for your own application. This application was generated with an early beta of the angular-cli, and while it has been updated to v1 (thanks to [@TheKeithStewart](https://github.com/TheKeithStewart)), _I do **not** intend to keep it up to date w/ newer versions of Angular, the CLI, nor the ArcGIS API going forward_.
+
+Rather than clone this repository, you should create your own application with the [angular-cli](https://github.com/angular/angular-cli) and then follow the instructions below to add the above libraries:
+ - [esri-loader](https://github.com/Esri/esri-loader#usage) - a low level service needed to load and use ArcGIS modules (v3.x or v4.x) in non-Dojo applications
+ - [angular-esri-components](https://github.com/TheKeithStewart/angular-esri-components#setup) - a set of reusable components for use with v4.x (only) of the ArcGIS API
 
 ## Running this application
 
