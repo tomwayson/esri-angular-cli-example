@@ -4,7 +4,7 @@
 
 ## Goal
 
-This repository is an example of one way to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli).
+**NOTE** This repository has been archived. For a more up to date example of one way to use the [ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/) in an application generated with [angular-cli](https://github.com/angular/angular-cli), see [angular-cli-esri-map](https://github.com/Esri/angular-cli-esri-map).
 
 The application uses the [angular-esri-components](https://github.com/TheKeithStewart/angular-esri-components) component library to lazy load the ArcGIS API for JavaScript and then require the modules needed to create and work with a map.
  
